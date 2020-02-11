@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private Collider coll;
     private bool forward, backward;
 
+    private bool rotating = false;
+
 
     private void Start()
     {
@@ -37,12 +39,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Left"))
         {
-            transform.Rotate(new Vector3(0, -90, 0));
+            transform.Rotate(0, -90, 0);
+            
         }
 
         if(Input.GetButtonDown("Right"))
         {
-            transform.Rotate(new Vector3(0, 90, 0));
+            transform.Rotate(0, 90, 0);
         }
     }
 
