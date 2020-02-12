@@ -51,7 +51,7 @@ public class Beat {
         }
         switch (n2) {
             case Note.NONE:
-                s += "-";
+                s += "--";
                 break;
             case Note.A:
                 s += "A";

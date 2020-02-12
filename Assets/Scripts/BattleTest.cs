@@ -10,6 +10,7 @@ public class BattleTest : MonoBehaviour
     private float beatTime;
     private int beatCount;
     private int measure;
+    //private float measureTimer;
     public TextMeshProUGUI text;
     private Pattern[] measures;
     private bool start;
@@ -19,9 +20,9 @@ public class BattleTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern()};
+        measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern() };
         startTimer = 5;
-        bps = 60 / tempo;
+        bps =tempo / 60;
         beatTime = 0;
         beatCount = 0;
         measure = 0;
@@ -33,20 +34,22 @@ public class BattleTest : MonoBehaviour
     {
         if (start) {
             text.text = toString();
-            if (startTimer <= (5 + (6 * bps))) {
-                startTimer += Time.deltaTime / bps;
+           // if (startTimer <= (5 + (4 * bps))) {
+            if (startTimer <= 9) {
+                startTimer += Time.deltaTime * bps;
                 text.text = Mathf.Floor(startTimer).ToString();
                 if(Mathf.Floor(startTimer) > prevCount) {
                     beep.Play();
                     prevCount = Mathf.Floor(startTimer);
                 }
                 
-            }else {
+            }else if(measure < 5) {
+                
                 if (beatTime == 0) {
                     beep.Play();
                 }
-                beatTime += Time.deltaTime;
-                if(beatTime >= bps) {
+                beatTime += Time.deltaTime * bps;
+                if(beatTime >= 1) {
                     beatCount++;
                     if(beatCount > 3) {
                         beatCount = 0;
@@ -69,7 +72,13 @@ public class BattleTest : MonoBehaviour
                 }
 
                 text.text = toString();
+            } else {
+                measure = 0;
+                start = false;
+                startTimer = 5;
+                measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern() };
             }
+            
         }
         else {
             text.text = "Press a note to start";
@@ -82,7 +91,7 @@ public class BattleTest : MonoBehaviour
     }
     public string toString() {
         string s = "|";
-        for(int ii = 0; ii < 4; ii++) {
+        for(int ii = 0; ii < 5; ii++) {
             s += measures[ii].toString();
         }
         return s;
