@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Collider coll;
     private bool forward, backward;
 
-    private float rotationAmount = 4.0f;
+    private float rotationAmount = 50.0f;
     private float targetAngle = 0.0f;
 
 
@@ -53,6 +53,34 @@ public class PlayerMovement : MonoBehaviour
         {
             Rotate();
         }
+
+        Debug.Log(targetAngle);
+    }
+
+    protected void Rotate()
+    {
+
+        float step = rotationAmount * Time.deltaTime;
+
+        if (targetAngle > 0)
+        {
+            transform.Rotate(Vector3.up * step);
+            targetAngle -= step;
+            if(targetAngle < 1)
+            {
+                targetAngle = 0;
+            }
+        }
+        else if (targetAngle < 0)
+        {
+            transform.Rotate(Vector3.up * -step);
+            targetAngle += step;
+
+            if (targetAngle > -1)
+            {
+                targetAngle = 0;
+            }
+        }
     }
 
     private void UpdateRays()
@@ -72,23 +100,5 @@ public class PlayerMovement : MonoBehaviour
     private void ResetRays()
     {
         forward = backward = false;
-    }
-
-    protected void Rotate()
-    {
-
-        float step = rotationAmount * Time.deltaTime;
-
-        if (targetAngle > 0)
-        {
-            transform.Rotate(Vector3.up * rotationAmount);
-            targetAngle -= rotationAmount;
-        }
-        else if (targetAngle < 0)
-        {
-            transform.Rotate(Vector3.up * -rotationAmount);
-            targetAngle += rotationAmount;
-        }
-
     }
 }
