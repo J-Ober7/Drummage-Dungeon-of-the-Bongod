@@ -20,7 +20,7 @@ public class BattleTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern() };
+        measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern()};
         startTimer = 5;
         bps =tempo / 60;
         beatTime = 0;
@@ -43,7 +43,7 @@ public class BattleTest : MonoBehaviour
                     prevCount = Mathf.Floor(startTimer);
                 }
                 
-            }else if(measure < 5) {
+            }else if(measure < 4) {
                 
                 if (beatTime == 0) {
                     beep.Play();
@@ -76,7 +76,8 @@ public class BattleTest : MonoBehaviour
                 measure = 0;
                 start = false;
                 startTimer = 5;
-                measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern() };
+                prevCount = 3;
+                measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern()};
             }
             
         }
@@ -91,7 +92,7 @@ public class BattleTest : MonoBehaviour
     }
     public string toString() {
         string s = "|";
-        for(int ii = 0; ii < 5; ii++) {
+        for(int ii = 0; ii < 4; ii++) {
             s += measures[ii].toString();
         }
         return s;
