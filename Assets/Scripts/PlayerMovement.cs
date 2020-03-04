@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Collider coll;
     private bool forward, backward;
 
-    private float rotationAmount = 50.0f;
+    public float rotationAmount = 50.0f;
     private float targetAngle = 0.0f;
 
 
@@ -53,8 +53,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Rotate();
         }
-
-        Debug.Log(targetAngle);
     }
 
     protected void Rotate()

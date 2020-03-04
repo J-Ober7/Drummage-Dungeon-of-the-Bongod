@@ -23,8 +23,6 @@ public class PlayerLogic : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other) {
-
-        Debug.Log("Entering0");
         if (other.CompareTag("Enemy")) {
             SceneManager.LoadScene("BattleTestScene");
         }
