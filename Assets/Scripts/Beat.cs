@@ -17,6 +17,10 @@ public class Beat {
         n1 = na;
         n2 = nb;
     }
+    public Beat(Note na) {
+        n1 = na;
+        n2 = Note.NONE;
+    }
 
     public void addNote(Note n) {
         if(n1 == Note.NONE) {
@@ -25,7 +29,12 @@ public class Beat {
             n2 = n;
         }
     }
-
+    public bool Equals(Beat other) {
+        if(other == null) {
+            return false;
+        }
+        return (n1 == other.n1) && (n2 == other.n2);
+    }
     public string toString() {
 
         string s = "";

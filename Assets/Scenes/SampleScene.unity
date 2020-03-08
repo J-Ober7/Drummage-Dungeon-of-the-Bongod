@@ -727,5 +727,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempo: 120
-  text: {fileID: 210336208}
+  MeasureSelection: []
+  player: {fileID: 0}
+  enemy: {fileID: 0}
+  PlannedInput: {fileID: 0}
+  InputText: {fileID: 0}
+  PlayerHealth: {fileID: 0}
+  EnemyHealth: {fileID: 0}
   beep: {fileID: 963194229}

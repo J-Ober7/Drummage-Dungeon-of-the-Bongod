@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pattern : ScriptableObject
+public class Pattern 
 {
 
     public Beat[] beats;
@@ -36,6 +36,17 @@ public class Pattern : ScriptableObject
 
         return s;
     }
+    public bool Equals(Pattern other) {
+        if(other == null) {
+            return false;
+        }
+        bool test = true;
+        test = test && beats[0].Equals(other.beats[0]);
+        test = test && beats[1].Equals(other.beats[1]);
+        test = test && beats[2].Equals(other.beats[2]);
+        test = test && beats[3].Equals(other.beats[3]);
 
+        return test;
+    }
 
 }

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLogic : MonoBehaviour
 {
+    public LevelController lc;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,15 +17,18 @@ public class PlayerLogic : MonoBehaviour
     {
         
     }
-    private void OnCollisionStay(Collision collision) {
+    private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
-            SceneManager.LoadScene("BattleTestScene");
+            //lc.enterBattle(collision.gameObject.GetComponent<EnemyBattle>());
         }
     }
 
-    private void OnTriggerStay(Collider other) {
+    private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Enemy")) {
-            SceneManager.LoadScene("BattleTestScene");
+            //EnemyBattle hold = other.gameObject.GetComponent<EnemyBattle>();//new EnemyBattle()
+            EnemyBattle enemy = other.gameObject.GetComponent<EnemyBattle>();//new EnemyBattle()
+
+            lc.enterBattle(other.gameObject.GetComponent<EnemyBattle>());
         }
     }
 }
