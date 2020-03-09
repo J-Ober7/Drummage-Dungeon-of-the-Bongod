@@ -32,7 +32,7 @@ public class BattleTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern()};
+        measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern()};
         createSelections();
         startTimer = 5;
         bps = tempo / 60;
@@ -42,7 +42,7 @@ public class BattleTest : MonoBehaviour
         prevCount = 3;
 }
     private void OnEnable() {
-        measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern() };
+        measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern()};
         createSelections();
         startTimer = 5;
         bps = tempo / 60;
@@ -186,10 +186,15 @@ public class BattleTest : MonoBehaviour
         string s = "|";
         for (int ii = 0; ii < 4; ii++) {
             if (defendMeasures.Contains(ii)) {
-                s += EnemyAndSpells[MeasureSelection[ii].value].ToString();
+                if (MeasureSelection[ii].value == 0) {
+                    s += enemy.attack.toString();
+                }
+                else {
+                    s += player.Spellbook[MeasureSelection[ii - 1].value].castPattern.toString();
+                }
             }
             else {
-                s += Spells[MeasureSelection[ii].value].ToString();
+                s += player.Spellbook[MeasureSelection[ii].value].castPattern.toString();
             }
         }
         return s;
