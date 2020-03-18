@@ -26,14 +26,14 @@ public class BattleTest : MonoBehaviour
     public TextMeshProUGUI InputText;
     public TextMeshProUGUI PlayerHealth;
     public TextMeshProUGUI EnemyHealth;
-    private Pattern[] measures;
+    private Pattern[] InputMeasures;
     private bool start; //should a round of combat start
     public AudioSource beep;
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(false);
-        measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern()};
+        //gameObject.SetActive(false);
+        InputMeasures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern()};
         createSelections();
         startTimer = 5;
         bps = tempo / 60;
@@ -45,7 +45,7 @@ public class BattleTest : MonoBehaviour
 
 }
     private void OnEnable() {
-        measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern()};
+        InputMeasures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern()};
         createSelections();
         startTimer = 5;
         bps = tempo / 60;
@@ -90,16 +90,16 @@ public class BattleTest : MonoBehaviour
                 }
 
                 if (Input.GetButtonDown("Forward")) {
-                    measures[measure].addNote(Beat.Note.B, beatCount);
+                    InputMeasures[measure].addNote(Beat.Note.B, beatCount);
                 }
                 if (Input.GetButtonDown("Backward")) {
-                    measures[measure].addNote(Beat.Note.C, beatCount);
+                    InputMeasures[measure].addNote(Beat.Note.C, beatCount);
                 }
                 if (Input.GetButtonDown("Left")) {
-                    measures[measure].addNote(Beat.Note.A, beatCount);
+                    InputMeasures[measure].addNote(Beat.Note.A, beatCount);
                 }
                 if (Input.GetButtonDown("Right")) {
-                    measures[measure].addNote(Beat.Note.D, beatCount);
+                    InputMeasures[measure].addNote(Beat.Note.D, beatCount);
                 }
 
                 InputText.text = toString();
@@ -111,7 +111,7 @@ public class BattleTest : MonoBehaviour
                 start = false;
                 startTimer = 5;
                 prevCount = 3;
-                measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern() };
+                InputMeasures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern() };
                 
             }
             
@@ -127,27 +127,32 @@ public class BattleTest : MonoBehaviour
         
     }
     private void CheckMeasures() {
-        for(int ii = 0; ii < measures.Length; ++ii) {
-
+        
+        for(int ii = 0; ii < InputMeasures.Length; ++ii) {
+            Debug.Log(ii);
             int k = MeasureSelection[ii].value;
             if (defendMeasures.Contains(ii)) {
                 
                 if(k!=0) {
-                    if (measures[ii].Equals(player.Spellbook[k - 1])) {
+                    if (InputMeasures[ii].Equals(player.Spellbook[k - 1].castPattern)) {
                         player.Spellbook[k - 1].Cast(player, enemy);
                     }
                 }
                 else {
-                    if (measures[ii].Equals(enemy.attack)) {
+                    if (!InputMeasures[ii].Equals(enemy.attack)) {
                         player.takeDamage(enemy.damageValue);
                     }
                 }
             }
             else {
-                if (measures[ii].Equals(player.Spellbook[k])) {
+                if (InputMeasures[ii].Equals(player.Spellbook[k].castPattern)) {
+                    Debug.Log("Attack!");
                     player.Spellbook[k].Cast(player, enemy);
                 }
             }
+
+            EnemyHealth.text = "Enemy Health: " + enemy.Health;
+            PlayerHealth.text = "Player Health: " + player.Health;
         }
         enemy.CheckDeath();
     }
@@ -169,7 +174,7 @@ public class BattleTest : MonoBehaviour
             defendMeasures.Add(k);
         }
 
-        for(int ii = 0; ii < measures.Length; ii++) {
+        for(int ii = 0; ii < InputMeasures.Length; ii++) {
             if (!defendMeasures.Contains(ii)) {
                 MeasureSelection[ii].options = Spells;
             }
@@ -182,7 +187,7 @@ public class BattleTest : MonoBehaviour
     public string toString() {
         string s = "|";
         for(int ii = 0; ii < 5; ii++) {
-            s += measures[ii].toString();
+            s += InputMeasures[ii].toString();
         }
         return s;
     }

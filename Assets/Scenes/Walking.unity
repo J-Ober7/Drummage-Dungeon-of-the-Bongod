@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 218832887}
   m_Layer: 0
   m_Name: LevelController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3472,6 +3472,7 @@ MonoBehaviour:
   Health: 10
   Speed: 1
   damageValue: 5
+  lc: {fileID: 0}
 --- !u!1 &1965554277
 GameObject:
   m_ObjectHideFlags: 0
@@ -4074,6 +4075,16 @@ PrefabInstance:
         type: 3}
       propertyPath: BypassReverbZones
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2883679875317645403, guid: ef5e6c999badc0c46bc1d0992f074f56,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2883679875317645403, guid: ef5e6c999badc0c46bc1d0992f074f56,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4715011250361055840, guid: ef5e6c999badc0c46bc1d0992f074f56,
         type: 3}
