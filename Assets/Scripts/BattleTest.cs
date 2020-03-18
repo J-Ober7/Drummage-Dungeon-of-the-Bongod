@@ -74,7 +74,7 @@ public class BattleTest : MonoBehaviour
                 
             }
             //Accepting Player Input
-            else if(measure < 4) {
+            else if(measure < 5) {
                 
                 if (beatTime == 0) {
                     beep.Play();
@@ -149,6 +149,7 @@ public class BattleTest : MonoBehaviour
                 }
             }
         }
+        enemy.CheckDeath();
     }
     private void createSelections() {
         defendMeasures = new List<int>();

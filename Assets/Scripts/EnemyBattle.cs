@@ -26,10 +26,7 @@ public class EnemyBattle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Health <= 0) {
-            LevelController.endBattle();
-            Destroy(referenceObject);
-        }
+       
     }
 
     private void randomAttack() {
@@ -42,5 +39,11 @@ public class EnemyBattle : MonoBehaviour
         attack = new Pattern(beats[0], beats[1], beats[2], beats[3]);
 
 
+    }
+    public void CheckDeath() {
+        if (Health <= 0) {
+            LevelController.endBattle();
+            Destroy(referenceObject);
+        }
     }
 }
