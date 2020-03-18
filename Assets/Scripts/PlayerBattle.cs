@@ -26,6 +26,11 @@ public class PlayerBattle : MonoBehaviour
     }
 
     public void takeDamage(int damage) {
+        Health -= damage;
+    }
 
+    public void heal(int damage)
+    {
+        Health += damage;
     }
 }

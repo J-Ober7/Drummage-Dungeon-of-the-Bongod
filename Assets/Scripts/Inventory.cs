@@ -21,7 +21,7 @@ public class Inventory : MonoBehaviour
         pickUps = new PickUpType[16];
         for(int i = 0; i < pickUps.Length; ++i)
         {
-            pickUps[i] = PickUpType.None;
+            pickUps[i] = new None();
         }
     }
 
@@ -38,10 +38,11 @@ public class Inventory : MonoBehaviour
 
     public void AddToInventory(PickUpType p)
     {
+        Debug.Log(pickUps.Length);
         for(int i = 0; i < pickUps.Length; ++i)
         {
             GameObject button;
-            if(pickUps[i] == PickUpType.None)
+            if (pickUps[i].ReturnString() == "None")
             {
                 pickUps[i] = p;
                 button = InvPanel.transform.GetChild(i).gameObject;
@@ -56,18 +57,19 @@ public class Inventory : MonoBehaviour
         print("Removed");
         pickUps[ind].Effect();
         GameObject button = InvPanel.transform.GetChild(ind).gameObject;
-        button.GetComponent<Image>().sprite = SetSprite(PickUpType.None);
-        pickUps[ind] = PickUpType.None;
+        button.GetComponent<Image>().sprite = SetSprite(new None());
+        pickUps[ind] = new None();
     }
 
 
     private Sprite SetSprite(PickUpType p)
     {
-        switch (p)
+        string s = p.ReturnString();
+        switch (s)
         {
-            case PickUpType.Health:
+            case "Health":
                 return health;
-            case PickUpType.None:
+            case "None":
                 return none;
             default:
                 return none;

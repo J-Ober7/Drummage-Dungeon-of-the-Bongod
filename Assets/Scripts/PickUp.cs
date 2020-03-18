@@ -9,6 +9,10 @@ public class PickUp : MonoBehaviour
     public PickUpType put;
     public TextMeshProUGUI text;
 
+    private void Start()
+    {
+        put = GetComponent<PickUpType>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
