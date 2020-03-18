@@ -32,6 +32,7 @@ public class BattleTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.SetActive(false);
         measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern()};
         createSelections();
         startTimer = 5;
@@ -40,6 +41,8 @@ public class BattleTest : MonoBehaviour
         beatCount = 0;
         measure = 0;
         prevCount = 3;
+        start = false;
+
 }
     private void OnEnable() {
         measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern()};
@@ -50,6 +53,7 @@ public class BattleTest : MonoBehaviour
         beatCount = 0;
         measure = 0;
         prevCount = 3;
+        start = false;
     }
 
     // Update is called once per frame
@@ -70,7 +74,7 @@ public class BattleTest : MonoBehaviour
                 
             }
             //Accepting Player Input
-            else if(measure < 4) {
+            else if(measure < 5) {
                 
                 if (beatTime == 0) {
                     beep.Play();
@@ -107,7 +111,7 @@ public class BattleTest : MonoBehaviour
                 start = false;
                 startTimer = 5;
                 prevCount = 3;
-                measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern()};
+                measures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern() };
                 
             }
             
@@ -115,7 +119,7 @@ public class BattleTest : MonoBehaviour
         else {
             PlannedInput.text = PlannedString();
             InputText.text = "Press a note to start";
-            if (Input.GetButton("Forward") || Input.GetButton("Backward") || Input.GetButton("Left") || Input.GetButton("Right")) {
+            if (Input.GetKeyDown(KeyCode.Space)) {/*Input.GetButton("Forward") || Input.GetButton("Backward") || Input.GetButton("Left") || Input.GetButton("Right")*/
                 start = true;
                 
             }
@@ -145,6 +149,7 @@ public class BattleTest : MonoBehaviour
                 }
             }
         }
+        enemy.CheckDeath();
     }
     private void createSelections() {
         defendMeasures = new List<int>();
@@ -164,7 +169,7 @@ public class BattleTest : MonoBehaviour
             defendMeasures.Add(k);
         }
 
-        for(int ii = 0; ii < 4; ii++) {
+        for(int ii = 0; ii < measures.Length; ii++) {
             if (!defendMeasures.Contains(ii)) {
                 MeasureSelection[ii].options = Spells;
             }
@@ -176,7 +181,7 @@ public class BattleTest : MonoBehaviour
     }
     public string toString() {
         string s = "|";
-        for(int ii = 0; ii < 4; ii++) {
+        for(int ii = 0; ii < 5; ii++) {
             s += measures[ii].toString();
         }
         return s;
@@ -184,13 +189,13 @@ public class BattleTest : MonoBehaviour
 
     private string PlannedString() {
         string s = "|";
-        for (int ii = 0; ii < 4; ii++) {
+        for (int ii = 0; ii < 5; ii++) {
             if (defendMeasures.Contains(ii)) {
                 if (MeasureSelection[ii].value == 0) {
                     s += enemy.attack.toString();
                 }
                 else {
-                    s += player.Spellbook[MeasureSelection[ii - 1].value].castPattern.toString();
+                    s += player.Spellbook[MeasureSelection[ii].value - 1].castPattern.toString();
                 }
             }
             else {

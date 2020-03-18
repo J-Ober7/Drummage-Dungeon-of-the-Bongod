@@ -14,7 +14,7 @@ public class PlayerBattle : MonoBehaviour
         Speed = 4;
         Spell Firebolt = new Spell("Firebolt",
             new Pattern(new Beat(Beat.Note.A), new Beat(Beat.Note.D), new Beat(Beat.Note.A), new Beat(Beat.Note.D)),
-            Spell.Type.Attack);
+            Spell.Type.Attack, 3);
 
         Spellbook = new Spell[] {Firebolt};
     }

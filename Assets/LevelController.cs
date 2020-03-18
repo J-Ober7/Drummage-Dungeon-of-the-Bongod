@@ -25,6 +25,7 @@ public class LevelController : MonoBehaviour
         //battleController.player = player;
         battleController.enemy = enemy;
         BattleBlock.SetActive(true);
+        //Debug.Log("tests");
         //battleController.enabled = true;
         inCombat = true;
     }

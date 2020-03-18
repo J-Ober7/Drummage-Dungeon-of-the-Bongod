@@ -14,8 +14,14 @@ public class Beat {
     }
 
     public Beat(Note na, Note nb) {
-        n1 = na;
-        n2 = nb;
+        if (na == Note.NONE && nb != Note.NONE) {
+            n1 = nb;
+            n2 = Note.NONE;
+        }
+        else {
+            n1 = na;
+            n2 = nb;
+        }
     }
     public Beat(Note na) {
         n1 = na;
@@ -60,7 +66,7 @@ public class Beat {
         }
         switch (n2) {
             case Note.NONE:
-                s += "--";
+                s += "-";
                 break;
             case Note.A:
                 s += "A";
