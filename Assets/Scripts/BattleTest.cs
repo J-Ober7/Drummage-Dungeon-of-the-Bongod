@@ -156,6 +156,8 @@ public class BattleTest : MonoBehaviour
         }
         enemy.CheckDeath();
     }
+
+
     private void createSelections() {
         defendMeasures = new List<int>();
         EnemyAndSpells = new List<TMP_Dropdown.OptionData>();
