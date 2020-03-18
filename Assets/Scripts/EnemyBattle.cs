@@ -9,6 +9,7 @@ public class EnemyBattle : MonoBehaviour
     public Pattern attack;
     public int damageValue;
     private GameObject referenceObject;
+    public LevelController lc;
 
     public EnemyBattle(int H, int S, Pattern p, int d, GameObject g) {
         Health = H;
@@ -20,6 +21,8 @@ public class EnemyBattle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        lc = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
         randomAttack();
     }
 
@@ -42,8 +45,8 @@ public class EnemyBattle : MonoBehaviour
     }
     public void CheckDeath() {
         if (Health <= 0) {
-            LevelController.endBattle();
-            Destroy(referenceObject);
+            lc.endBattle();
+            Destroy(gameObject);
         }
     }
 }

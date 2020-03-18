@@ -11,7 +11,7 @@ public class PlayerBattle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Speed = 4;
+        //Speed;
         Spell Firebolt = new Spell("Firebolt",
             new Pattern(new Beat(Beat.Note.A), new Beat(Beat.Note.D), new Beat(Beat.Note.A), new Beat(Beat.Note.D)),
             Spell.Type.Attack, 3);

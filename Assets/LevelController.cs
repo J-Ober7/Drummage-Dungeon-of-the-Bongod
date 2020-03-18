@@ -30,7 +30,8 @@ public class LevelController : MonoBehaviour
         inCombat = true;
     }
 
-    public static void endBattle() {
+    public void endBattle() {
+        BattleBlock.SetActive(false);
         inCombat = false;
     }
 }
