@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
     //Sprites
     public Sprite none;
     public Sprite health;
+    public Sprite key;
 
     // Start is called before the first frame update
     void Start()
