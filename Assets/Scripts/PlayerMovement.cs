@@ -58,22 +58,28 @@ public class PlayerMovement : MonoBehaviour
 
         if (targetAngle > 0)
         {
+            if(targetAngle - step < 0) {
+                step = targetAngle;
+            }
             transform.Rotate(Vector3.up * step);
             targetAngle -= step;
-            if(targetAngle < 1)
+            /*if(targetAngle < 1)
             {
                 targetAngle = 0;
-            }
+            }*/
         }
         else if (targetAngle < 0)
         {
-            transform.Rotate(Vector3.up * -step);
+            if (targetAngle + step > 0) {
+                step = -1 * targetAngle;
+            }
+            transform.Rotate(Vector3.up * -1 * step);
             targetAngle += step;
 
-            if (targetAngle > -1)
+            /*if (targetAngle > -1)
             {
                 targetAngle = 0;
-            }
+            }*/
         }
     }
 
