@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 3;
+    public float speed;
     public LayerMask lm;
 
     private Collider coll;
@@ -84,11 +84,11 @@ public class PlayerMovement : MonoBehaviour
         Vector3 forpos = center + transform.forward * offset;
         Vector3 backpos = center - transform.forward * offset;
 
-        forward = Physics.Raycast(forpos, transform.forward, speed / 2, lm);
-        backward = Physics.Raycast(backpos, transform.forward * -1, speed / 2, lm);
+        forward = Physics.Raycast(forpos, transform.forward, speed, lm);
+        backward = Physics.Raycast(backpos, transform.forward * -1, speed, lm);
 
-        Debug.DrawRay(forpos, transform.forward, Color.yellow);
-        Debug.DrawRay(backpos, transform.forward * -1, Color.red);
+        Debug.DrawRay(forpos, transform.forward * speed, Color.yellow);
+        Debug.DrawRay(backpos, transform.forward * -1 * speed, Color.red);
     }
 
     private void ResetRays()
