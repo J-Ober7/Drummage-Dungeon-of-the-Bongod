@@ -5,7 +5,7 @@ using UnityEngine;
 public class Key : MonoBehaviour, PickUpType
 {
     public Door door;
-
+    public string Name;
     public void Effect()
     {
         door.openable = true;
@@ -13,7 +13,7 @@ public class Key : MonoBehaviour, PickUpType
 
     public string ReturnString()
     {
-        return "Key";
+        return Name;
     }
 
     // Start is called before the first frame update

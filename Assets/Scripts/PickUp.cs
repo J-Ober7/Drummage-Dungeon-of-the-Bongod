@@ -8,6 +8,7 @@ public class PickUp : MonoBehaviour
 {
     public PickUpType put;
     public TextMeshProUGUI text;
+    private string PickUpMessage = "Press [E] to pick up item";
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class PickUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            text.text = PickUpMessage;
             text.gameObject.SetActive(true);
         }
 
@@ -27,6 +29,7 @@ public class PickUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            text.text = "";
             text.gameObject.SetActive(false);
         }
     }

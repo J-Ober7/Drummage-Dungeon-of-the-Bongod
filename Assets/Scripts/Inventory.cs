@@ -62,6 +62,28 @@ public class Inventory : MonoBehaviour
         pickUps[ind] = new None();
     }
 
+    public bool CheckInventory(string name) {
+
+        bool rv = false;
+        foreach (PickUpType p in pickUps) {
+            if(p.ReturnString() == name) {
+                rv = true;
+            }
+
+        }
+        return rv;
+    }
+
+    public int getItem(string name) {
+        int rv = -1;
+        for(int ii = 0; ii < pickUps.Length; ++ii) {
+            if (pickUps[ii].ReturnString() == name) {
+                rv = ii;
+                break;
+            }
+        }
+        return rv;
+    }
 
     private Sprite SetSprite(PickUpType p)
     {
