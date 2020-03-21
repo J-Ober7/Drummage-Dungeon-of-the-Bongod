@@ -64,7 +64,7 @@ public class BattleTest : MonoBehaviour
     void Update()
     {
         EnemyHealth.text = "Enemy Health: " + enemy.Health;
-        PlayerHealth.text = "Player Health: " + player.Health;
+        PlayerHealth.text = "Player Health: " + player.getHealth();
         if (start) {
             InputText.text = toString();
            //The Countdown timer before accepting player imput
@@ -160,7 +160,7 @@ public class BattleTest : MonoBehaviour
             }
 
             EnemyHealth.text = "Enemy Health: " + enemy.Health;
-            PlayerHealth.text = "Player Health: " + player.Health;
+            PlayerHealth.text = "Player Health: " + player.maxHealth;
         }
         enemy.CheckDeath();
     }
