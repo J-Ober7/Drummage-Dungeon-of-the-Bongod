@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2848f9ea0f9e2a48844ce2c9a1a54e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  maxHealth: 10
   Speed: 4
 --- !u!1 &126295391
 GameObject:
@@ -4816,7 +4816,7 @@ PrefabInstance:
     - target: {fileID: 4715011250361055841, guid: ef5e6c999badc0c46bc1d0992f074f56,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4715011250361055871, guid: ef5e6c999badc0c46bc1d0992f074f56,
         type: 3}

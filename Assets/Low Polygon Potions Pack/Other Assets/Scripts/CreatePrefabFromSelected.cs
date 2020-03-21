@@ -6,7 +6,7 @@ using System.IO;
 
 class CreatePrefabFromSelected : ScriptableObject
 {
-	const string menuTitle = "GameObject/Create Prefab From Selected";
+	/*const string menuTitle = "GameObject/Create Prefab From Selected";
 	
 	/// <summary>
 	/// Creates a prefab from the selected game object.
@@ -52,5 +52,5 @@ class CreatePrefabFromSelected : ScriptableObject
 	static bool ValidateCreatePrefab()
 	{
 		return Selection.activeGameObject != null;
-	}
+	}*/
 }
