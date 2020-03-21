@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -33,5 +34,14 @@ public class LevelController : MonoBehaviour
     public void endBattle() {
         BattleBlock.SetActive(false);
         inCombat = false;
+    }
+
+    public static void winGame() {
+        SceneManager.LoadScene("TutorialBeat");
+
+    }
+    public static void loseGame() {
+        SceneManager.LoadScene("Lose");
+
     }
 }

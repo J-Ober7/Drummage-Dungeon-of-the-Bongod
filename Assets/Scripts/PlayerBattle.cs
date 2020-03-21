@@ -22,7 +22,9 @@ public class PlayerBattle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       if(Health <= 0) {
+            LevelController.loseGame();
+        }
     }
 
     public void takeDamage(int damage) {

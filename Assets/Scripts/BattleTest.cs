@@ -29,6 +29,10 @@ public class BattleTest : MonoBehaviour
     private Pattern[] InputMeasures;
     private bool start; //should a round of combat start
     public AudioSource beep;
+    public AudioSource ANote;
+    public AudioSource BNote;
+    public AudioSource CNote;
+    public AudioSource DNote;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,15 +95,19 @@ public class BattleTest : MonoBehaviour
 
                 if (Input.GetButtonDown("Forward")) {
                     InputMeasures[measure].addNote(Beat.Note.B, beatCount);
+                    BNote.Play();
                 }
                 if (Input.GetButtonDown("Backward")) {
                     InputMeasures[measure].addNote(Beat.Note.C, beatCount);
+                    CNote.Play();
                 }
                 if (Input.GetButtonDown("Left")) {
                     InputMeasures[measure].addNote(Beat.Note.A, beatCount);
+                    ANote.Play();
                 }
                 if (Input.GetButtonDown("Right")) {
                     InputMeasures[measure].addNote(Beat.Note.D, beatCount);
+                    DNote.Play();
                 }
 
                 InputText.text = toString();

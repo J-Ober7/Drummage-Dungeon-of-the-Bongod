@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     public TextMeshProUGUI text;
     public Animator anim;
     public string DoorName;
+    private bool open;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,24 +42,27 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Inventory inv = other.GetComponent<Inventory>();
-            if (openable) {
-                text.text = "[E] to Open";
-                if (Input.GetKeyDown(KeyCode.E)) {
-                    anim.SetTrigger("Open");
-                }
-            }
-            else {
-                if (inv.CheckInventory(DoorName)) {
-                    text.text = "[E] to Unlock the door";
+            if (!open) {
+                Inventory inv = other.GetComponent<Inventory>();
+                if (openable) {
+                    text.text = "[E] to Open";
                     if (Input.GetKeyDown(KeyCode.E)) {
-                        inv.RemoveFromInventory(inv.getItem(DoorName));
+                        anim.SetTrigger("Open");
+                        open = true;
                     }
                 }
                 else {
-                    text.text = "The door is locked. Look for a key";
+                    if (inv.CheckInventory(DoorName)) {
+                        text.text = "[E] to Unlock the door";
+                        if (Input.GetKeyDown(KeyCode.E)) {
+                            inv.RemoveFromInventory(inv.getItem(DoorName));
+                        }
+                    }
+                    else {
+                        text.text = "The door is locked. Look for a key";
+                    }
+
                 }
-                
             }
 
 

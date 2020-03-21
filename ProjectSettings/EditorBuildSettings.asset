@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleTestScene.unity
     guid: 2b08881452bba9447a8f64031b938211
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: e93e10ff5c03681468845b8ee431f9ff
+  - enabled: 1
+    path: Assets/Scenes/TutorialBeat.unity
+    guid: 9bccd3f0934de9a42bce014c5f2b4ade
   m_configObjects: {}
