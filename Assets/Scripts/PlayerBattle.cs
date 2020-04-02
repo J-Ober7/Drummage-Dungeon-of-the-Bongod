@@ -16,8 +16,10 @@ public class PlayerBattle : MonoBehaviour
         Spell Firebolt = new Spell("Firebolt",
             new Pattern(new Beat(Beat.Note.A), new Beat(Beat.Note.D), new Beat(Beat.Note.A), new Beat(Beat.Note.D)),
             Spell.Type.Attack, 3);
-
-        Spellbook = new Spell[] {Firebolt};
+        Spell MinorHeal = new Spell("Minor Heal",
+            new Pattern(new Beat(Beat.Note.C, Beat.Note.D), new Beat(Beat.Note.B, Beat.Note.C), new Beat(Beat.Note.B), new Beat(Beat.Note.D)),
+            Spell.Type.Attack, 3);
+        Spellbook = new Spell[] {Firebolt, MinorHeal};
     }
 
     // Update is called once per frame

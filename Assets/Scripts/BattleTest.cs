@@ -19,7 +19,7 @@ public class BattleTest : MonoBehaviour
     private float startTimer; //counter for the begining of a round to give the player the tempo
     private List<TMP_Dropdown.OptionData> EnemyAndSpells;
     private List<TMP_Dropdown.OptionData> Spells;
-
+    private int totalMeasures = 5;
     //private float measureTimer;
 
     public TextMeshProUGUI PlannedInput;
@@ -179,7 +179,7 @@ public class BattleTest : MonoBehaviour
 
         
         for (int i = 0; i < enemy.Speed; i++) {
-            int k = Random.Range(0, enemy.Speed);
+            int k = Random.Range(0, totalMeasures);
             MeasureSelection[k].options = EnemyAndSpells;
             defendMeasures.Add(k);
         }
