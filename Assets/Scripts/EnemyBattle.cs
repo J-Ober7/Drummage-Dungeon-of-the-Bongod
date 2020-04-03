@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBattle : MonoBehaviour
 {
     public int Health;
+    private int currHealth;
     public int Speed;
     public Pattern attack;
     public int damageValue;
@@ -21,7 +22,7 @@ public class EnemyBattle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        currHealth = Health;
         lc = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
         randomAttack();
     }
@@ -40,9 +41,25 @@ public class EnemyBattle : MonoBehaviour
         }
 
         attack = new Pattern(beats[0], beats[1], beats[2], beats[3]);
-
-
     }
+
+    public void takeDamage(int d)
+    {
+        currHealth -= d;
+    }
+
+    public void applyWeakness(int w)
+    {
+        if(damageValue > w)
+        {
+            damageValue -= w;
+        }
+        else
+        {
+            damageValue = 1;
+        }
+    }
+
     public void CheckDeath() {
         if (Health <= 0) {
             lc.endBattle();

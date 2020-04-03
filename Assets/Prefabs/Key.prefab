@@ -91,6 +91,8 @@ GameObject:
   - component: {fileID: 1872769915180728877}
   - component: {fileID: 2426715669672691769}
   - component: {fileID: 5189640828988275575}
+  - component: {fileID: 650953521}
+  - component: {fileID: 650953522}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -139,6 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be47b40694813c4db53a06333008a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 0}
+  Name: EndDoor
 --- !u!114 &5189640828988275575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +156,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+--- !u!65 &650953521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359530813013266673}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.69827, y: 2.1192896, z: 30}
+  m_Center: {x: 0.53159654, y: 3.0996447, z: -0.11748314}
+--- !u!65 &650953522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359530813013266673}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6921372, y: 2.1192896, z: 30}
+  m_Center: {x: 0.2749309, y: 3.0996447, z: -0.11748314}

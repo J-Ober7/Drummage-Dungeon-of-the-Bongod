@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spell
 {
-    public enum Type { Attack, Slow, Heal };
+    public enum Type { Attack, Slow, Heal, Weak };
     public string Name;
     public Pattern castPattern;
     private int spellValue;
@@ -27,14 +27,25 @@ public class Spell
         {
             CastHeal(p);
         }
+        else if(type == Type.Weak)
+        {
+            CastWeak(e);
+        }
     }
 
-    private void CastAttack(EnemyBattle e) {
-        e.Health -= spellValue;
+    private void CastAttack(EnemyBattle e)
+    {
+        e.takeDamage(spellValue);
     }
 
-    private void CastHeal(PlayerBattle p) {
+    private void CastHeal(PlayerBattle p)
+    {
         p.heal(spellValue);
+    }
+
+    private void CastWeak(EnemyBattle e)
+    {
+        
     }
 
 

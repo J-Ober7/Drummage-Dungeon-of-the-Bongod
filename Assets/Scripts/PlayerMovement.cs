@@ -29,11 +29,11 @@ public class PlayerMovement : MonoBehaviour
         ResetRays();
         UpdateRays();
         if (!LevelController.inCombat) {
-            if (Input.GetButtonDown("Forward") && !forward) {
+            if (Input.GetButtonDown("Forward") && !forward && targetAngle == 0) {
                 transform.position += transform.forward * speed;
             }
 
-            if (Input.GetButtonDown("Backward") && !backward) {
+            if (Input.GetButtonDown("Backward") && !backward && targetAngle == 0) {
                 transform.position -= transform.forward * speed;
             }
 

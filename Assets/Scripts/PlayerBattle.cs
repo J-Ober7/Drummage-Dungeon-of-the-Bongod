@@ -18,7 +18,11 @@ public class PlayerBattle : MonoBehaviour
             Spell.Type.Attack, 3);
         Spell MinorHeal = new Spell("Minor Heal",
             new Pattern(new Beat(Beat.Note.C, Beat.Note.D), new Beat(Beat.Note.B, Beat.Note.C), new Beat(Beat.Note.B), new Beat(Beat.Note.D)),
-            Spell.Type.Attack, 3);
+            Spell.Type.Attack, 1);
+        Spell Weaken = new Spell("Weaken",
+            new Pattern(new Beat(Beat.Note.D, Beat.Note.A), new Beat(Beat.Note.C, Beat.Note.B), new Beat(Beat.Note.D, Beat.Note.A), new Beat(Beat.Note.B, Beat.Note.C)),
+            Spell.Type.Weak, 1);
+
         Spellbook = new Spell[] {Firebolt, MinorHeal};
     }
 
@@ -38,13 +42,13 @@ public class PlayerBattle : MonoBehaviour
         currentHealth -= damage;
     }
 
-    public void heal(int damage)
+    public void heal(int heal)
     {
-        if (currentHealth + damage > maxHealth) {
+        if (currentHealth + heal > maxHealth) {
             currentHealth = maxHealth;
         }
         else {
-            currentHealth += damage;
+            currentHealth += heal;
         }
     }
 }

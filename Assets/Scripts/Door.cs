@@ -6,7 +6,7 @@ using TMPro;
 public class Door : MonoBehaviour
 {
     public GameObject player;
-    public bool openable;
+    public bool openable = false;
     public TextMeshProUGUI text;
     public Animator anim;
     public string DoorName;
@@ -16,7 +16,7 @@ public class Door : MonoBehaviour
     {
         //anim = this.GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-        openable = false;
+        //openable = false;
     }
 
     // Update is called once per frame

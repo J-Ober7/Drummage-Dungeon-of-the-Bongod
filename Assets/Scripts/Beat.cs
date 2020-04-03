@@ -52,10 +52,10 @@ public class Beat {
                 s += "A";
                 break;
             case Note.B:
-                s += "B";
+                s += "W";
                 break;
             case Note.C:
-                s += "C";
+                s += "S";
                 break;
             case Note.D:
                 s += "D";
@@ -72,10 +72,10 @@ public class Beat {
                 s += "A";
                 break;
             case Note.B:
-                s += "B";
+                s += "W";
                 break;
             case Note.C:
-                s += "C";
+                s += "S";
                 break;
             case Note.D:
                 s += "D";
