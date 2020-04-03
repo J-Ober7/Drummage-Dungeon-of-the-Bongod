@@ -94,4 +94,9 @@ public class Inventory : MonoBehaviour
                 return none;
         }
     }
+
+    public string GetDescription(int ind)
+    {
+         return pickUps[ind].Description();
+    }
 }
