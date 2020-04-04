@@ -69,7 +69,7 @@ public class EnemyBattle : MonoBehaviour
     }
 
     public void CheckDeath() {
-        if (Health <= 0) {
+        if (currHealth <= 0) {
             anim.SetTrigger("Death");
             lc.endBattle();
             GetComponent<BoxCollider>().enabled = false;
