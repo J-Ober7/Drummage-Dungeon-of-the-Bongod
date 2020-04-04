@@ -4600,6 +4600,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231762b6712b319499466833d4511edf, type: 3}
+--- !u!1 &913959435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4954618927469564761, guid: 231762b6712b319499466833d4511edf,
+    type: 3}
+  m_PrefabInstance: {fileID: 913959434}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &918685464
 GameObject:
   m_ObjectHideFlags: 0
@@ -10400,6 +10406,16 @@ PrefabInstance:
       propertyPath: Inv
       value: 
       objectReference: {fileID: 1357450162}
+    - target: {fileID: 558010473600988135, guid: 144c2b829f319fd41be6d7451a783c4b,
+        type: 3}
+      propertyPath: keyClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f44fb5c757ece704199ac886b35e8d76, type: 3}
+    - target: {fileID: 558010473600988135, guid: 144c2b829f319fd41be6d7451a783c4b,
+        type: 3}
+      propertyPath: InvPanel
+      value: 
+      objectReference: {fileID: 913959435}
     - target: {fileID: 558010473600988159, guid: 144c2b829f319fd41be6d7451a783c4b,
         type: 3}
       propertyPath: m_Name

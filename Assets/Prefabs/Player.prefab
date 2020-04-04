@@ -162,6 +162,7 @@ MonoBehaviour:
   none: {fileID: 21300000, guid: 1334611815f254640a797fbac0f090f7, type: 3}
   health: {fileID: 21300000, guid: 6967073ed9d43a44182532511754deed, type: 3}
   key: {fileID: 21300000, guid: f6242993fc3e1224d9907a03c00ec31b, type: 3}
+  keyClip: {fileID: 8300000, guid: f44fb5c757ece704199ac886b35e8d76, type: 3}
 --- !u!114 &558010473600988134
 MonoBehaviour:
   m_ObjectHideFlags: 0

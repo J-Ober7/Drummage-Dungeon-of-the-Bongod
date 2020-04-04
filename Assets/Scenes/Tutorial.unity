@@ -137,6 +137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: lc
       value: 
+      objectReference: {fileID: 1355895554}
+    - target: {fileID: 7984847486401395829, guid: e408310b614588f4a8dbaddc1fbcab4e,
+        type: 3}
+      propertyPath: currHealth
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7984847486401395831, guid: e408310b614588f4a8dbaddc1fbcab4e,
         type: 3}
@@ -1272,11 +1277,6 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 973244535}
-    - target: {fileID: 1301931755056146692, guid: e64116f8202cc7d4bae05290460221b2,
-        type: 3}
-      propertyPath: doorSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 69d4e9286a6423f40b884bdb5b343af0, type: 3}
     - target: {fileID: 1301931756760238113, guid: e64116f8202cc7d4bae05290460221b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1356,7 +1356,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lc
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1355895554}
     - target: {fileID: 558010473600988130, guid: 144c2b829f319fd41be6d7451a783c4b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1422,11 +1422,6 @@ PrefabInstance:
       propertyPath: InvPanel
       value: 
       objectReference: {fileID: 738501099}
-    - target: {fileID: 558010473600988135, guid: 144c2b829f319fd41be6d7451a783c4b,
-        type: 3}
-      propertyPath: keyClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f44fb5c757ece704199ac886b35e8d76, type: 3}
     - target: {fileID: 558010473600988159, guid: 144c2b829f319fd41be6d7451a783c4b,
         type: 3}
       propertyPath: m_Name
@@ -1530,6 +1525,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfed1a5e64b6bd94fae4493d7beaf65f, type: 3}
+--- !u!114 &1355895554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2576431378189692860, guid: cfed1a5e64b6bd94fae4493d7beaf65f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1355895553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f59e23a7e2e65142b0ca5cc5944d0fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1376628805
 PrefabInstance:
   m_ObjectHideFlags: 0

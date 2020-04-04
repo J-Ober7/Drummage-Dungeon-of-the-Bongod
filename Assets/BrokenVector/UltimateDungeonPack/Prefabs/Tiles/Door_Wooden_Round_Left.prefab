@@ -62,6 +62,7 @@ MonoBehaviour:
   text: {fileID: 0}
   anim: {fileID: 1892783571}
   DoorName: EndDoor
+  doorSFX: {fileID: 8300000, guid: 69d4e9286a6423f40b884bdb5b343af0, type: 3}
 --- !u!1 &2642311626253688300
 GameObject:
   m_ObjectHideFlags: 0

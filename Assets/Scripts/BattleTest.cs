@@ -63,7 +63,7 @@ public class BattleTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EnemyHealth.text = "Enemy Health: " + enemy.Health;
+        EnemyHealth.text = "Enemy Health: " + enemy.currHealth;
         PlayerHealth.text = "Player Health: " + player.getHealth();
         if (start) {
             InputText.text = toString();
