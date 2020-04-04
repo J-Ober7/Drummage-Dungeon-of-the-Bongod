@@ -15,6 +15,8 @@ public class Inventory : MonoBehaviour
     public Sprite health;
     public Sprite key;
 
+    public AudioClip keyClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,10 @@ public class Inventory : MonoBehaviour
             GameObject button;
             if (pickUps[i].ReturnString() == "None")
             {
+                if(p.ReturnString() == "Key")
+                {
+                    AudioSource.PlayClipAtPoint(keyClip, transform.position);
+                }
                 pickUps[i] = p;
                 button = InvPanel.transform.GetChild(i).gameObject;
                 button.GetComponent<Image>().sprite = SetSprite(p);

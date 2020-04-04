@@ -1422,6 +1422,11 @@ PrefabInstance:
       propertyPath: InvPanel
       value: 
       objectReference: {fileID: 738501099}
+    - target: {fileID: 558010473600988135, guid: 144c2b829f319fd41be6d7451a783c4b,
+        type: 3}
+      propertyPath: keyClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f44fb5c757ece704199ac886b35e8d76, type: 3}
     - target: {fileID: 558010473600988159, guid: 144c2b829f319fd41be6d7451a783c4b,
         type: 3}
       propertyPath: m_Name
