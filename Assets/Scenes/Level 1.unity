@@ -1427,6 +1427,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1561172560}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &361683679 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: d265bb418a3d9574aaa5e7500d619208,
+    type: 3}
+  m_PrefabInstance: {fileID: 501343453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &366953976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9521,7 +9527,7 @@ MonoBehaviour:
   Speed: 2
   damageValue: 4
   lc: {fileID: 0}
-  anim: {fileID: 0}
+  anim: {fileID: 361683679}
   boss: 1
 --- !u!1001 &1937832355
 PrefabInstance:
