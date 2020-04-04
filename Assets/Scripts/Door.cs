@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     public Animator anim;
     public string DoorName;
     private bool open;
+    public AudioClip doorSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,6 @@ public class Door : MonoBehaviour
         //openable = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             text.gameObject.SetActive(true);
@@ -48,6 +44,7 @@ public class Door : MonoBehaviour
                     text.text = "[E] to Open";
                     if (Input.GetKeyDown(KeyCode.E)) {
                         anim.SetTrigger("Open");
+                        AudioSource.PlayClipAtPoint(doorSFX, other.gameObject.transform.position);
                         open = true;
                     }
                 }
