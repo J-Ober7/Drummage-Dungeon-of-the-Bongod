@@ -7,7 +7,6 @@ public class Inventory : MonoBehaviour
 {
     private bool active = false;
     public GameObject Inv;
-
     public PickUpType[] pickUps;
     public GameObject InvPanel;
 
