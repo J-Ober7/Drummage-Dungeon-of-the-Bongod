@@ -26,4 +26,8 @@ public class Health : MonoBehaviour, PickUpType
     {
         return "Potion that fills up to 3 health";
     }
+    public string toString()
+    {
+        return "Health Potion";
+    }
 }

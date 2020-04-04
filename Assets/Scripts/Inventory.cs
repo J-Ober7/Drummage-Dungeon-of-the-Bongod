@@ -19,6 +19,8 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InvPanel = GameObject.FindGameObjectWithTag("GridLayout");
+        Inv.SetActive(false);
         pickUps = new PickUpType[16];
         for(int i = 0; i < pickUps.Length; ++i)
         {
@@ -62,7 +64,9 @@ public class Inventory : MonoBehaviour
 
         bool rv = false;
         foreach (PickUpType p in pickUps) {
-            if(p.ReturnString() == name) {
+            Debug.Log(p.toString() + ": " + name);
+            if (p.toString() == name) {
+                Debug.Log("yes");
                 rv = true;
             }
 
@@ -73,7 +77,8 @@ public class Inventory : MonoBehaviour
     public int getItem(string name) {
         int rv = -1;
         for(int ii = 0; ii < pickUps.Length; ++ii) {
-            if (pickUps[ii].ReturnString() == name) {
+            Debug.Log(pickUps[ii].toString() + ": " + name);
+            if (pickUps[ii].toString() == name) {
                 rv = ii;
                 break;
             }
@@ -86,6 +91,8 @@ public class Inventory : MonoBehaviour
         string s = p.ReturnString();
         switch (s)
         {
+            case "Key":
+                return key;
             case "Health":
                 return health;
             case "None":

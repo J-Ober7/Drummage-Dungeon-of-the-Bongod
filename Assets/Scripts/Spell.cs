@@ -45,7 +45,7 @@ public class Spell
 
     private void CastWeak(EnemyBattle e)
     {
-        
+        e.applyWeakness(spellValue);
     }
 
 

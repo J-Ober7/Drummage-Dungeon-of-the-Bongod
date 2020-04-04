@@ -134,6 +134,8 @@ public class BattleTest : MonoBehaviour
         }
         
     }
+
+    //checks if player inputs matches selected measures 
     private void CheckMeasures() {
         
         for(int ii = 0; ii < InputMeasures.Length; ++ii) {
@@ -142,13 +144,32 @@ public class BattleTest : MonoBehaviour
             if (defendMeasures.Contains(ii)) {
                 
                 if(k!=0) {
+                    float t = 0;
                     if (InputMeasures[ii].Equals(player.Spellbook[k - 1].castPattern)) {
                         player.Spellbook[k - 1].Cast(player, enemy);
+                        
+                        while (t < 1.6)
+                        {
+                            t += Time.deltaTime;
+                        }
                     }
+                    enemy.AttackPlayer(player);
+                    t = 0;
+                    while (t < 1.6)
+                    {
+                        t += Time.deltaTime;
+                    }
+                    //player.takeDamage(enemy.damageValue);
                 }
                 else {
-                    if (!InputMeasures[ii].Equals(enemy.attack)) {
-                        player.takeDamage(enemy.damageValue);
+                    if (!InputMeasures[ii].Equals(enemy.attack))
+                    {
+                        enemy.AttackPlayer(player);
+                        float t = 0;
+                        while (t < 1.6)
+                        {
+                            t += Time.deltaTime;
+                        }
                     }
                 }
             }
@@ -159,7 +180,7 @@ public class BattleTest : MonoBehaviour
                 }
             }
 
-            EnemyHealth.text = "Enemy Health: " + enemy.Health;
+            EnemyHealth.text = "Enemy Health: " + enemy.currHealth;
             PlayerHealth.text = "Player Health: " + player.maxHealth;
         }
         enemy.CheckDeath();
@@ -172,6 +193,7 @@ public class BattleTest : MonoBehaviour
         Spells = new List<TMP_Dropdown.OptionData>();
         EnemyAndSpells.Add(new TMP_Dropdown.OptionData("Defend"));
         foreach(Spell s in player.Spellbook) {
+            Debug.Log(s.Name);
             TMP_Dropdown.OptionData spell = new TMP_Dropdown.OptionData(s.Name);
             EnemyAndSpells.Add(spell);
             Spells.Add(spell);

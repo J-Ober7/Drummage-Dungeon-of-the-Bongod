@@ -23,12 +23,12 @@ public class PlayerLogic : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
+    /*private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Enemy")) {
             //EnemyBattle hold = other.gameObject.GetComponent<EnemyBattle>();//new EnemyBattle()
             EnemyBattle enemy = other.gameObject.GetComponent<EnemyBattle>();//new EnemyBattle()
 
             lc.enterBattle(other.gameObject.GetComponent<EnemyBattle>());
         }
-    }
+    }*/
 }

@@ -13,11 +13,16 @@ public class Key : MonoBehaviour, PickUpType
 
     public string ReturnString()
     {
+        return "Key";
+    }
+
+    public string toString()
+    {
         return Name;
     }
 
     public string Description()
     {
-        return "Use this to open a door!";
+        return "Use this to open " + Name + "!";
     }
 }

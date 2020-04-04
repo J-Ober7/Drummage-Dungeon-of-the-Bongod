@@ -9,6 +9,8 @@ TagManager:
   - DescriptionText
   - D
   - DT
+  - UITextBox
+  - GridLayout
   layers:
   - Default
   - TransparentFX

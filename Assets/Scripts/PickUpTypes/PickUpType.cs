@@ -9,6 +9,8 @@ public interface PickUpType
     string ReturnString();
 
     string Description();
+
+    string toString();
 }
 
 public class None :  PickUpType
@@ -26,6 +28,12 @@ public class None :  PickUpType
     public string Description()
     {
         return "You have space in your inventory!";
+    }
+
+
+    public string toString()
+    {
+        return "None";
     }
 }
 

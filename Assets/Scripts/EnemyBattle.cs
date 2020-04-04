@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyBattle : MonoBehaviour
 {
     public int Health;
-    private int currHealth;
+    public int currHealth;
     public int Speed;
     public Pattern attack;
     public int damageValue;
     private GameObject referenceObject;
     public LevelController lc;
+    public Animator anim;
 
     public EnemyBattle(int H, int S, Pattern p, int d, GameObject g) {
         Health = H;
@@ -45,9 +46,14 @@ public class EnemyBattle : MonoBehaviour
 
     public void takeDamage(int d)
     {
+        anim.SetTrigger("Damage");
         currHealth -= d;
     }
-
+    public void AttackPlayer(PlayerBattle p)
+    {
+        anim.SetTrigger("Attack");
+        p.takeDamage(damageValue);
+    }
     public void applyWeakness(int w)
     {
         if(damageValue > w)
@@ -62,8 +68,26 @@ public class EnemyBattle : MonoBehaviour
 
     public void CheckDeath() {
         if (Health <= 0) {
+            anim.SetTrigger("Death");
             lc.endBattle();
+            GetComponent<BoxCollider>().enabled = false;
+            float t = 0;
+            while (t < 1.6)
+            {
+                t += Time.deltaTime;
+            }
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            //EnemyBattle hold = other.gameObject.GetComponent<EnemyBattle>();//new EnemyBattle()
+            EnemyBattle enemy = this;//new EnemyBattle()
+
+            lc.enterBattle(enemy);
         }
     }
 }
