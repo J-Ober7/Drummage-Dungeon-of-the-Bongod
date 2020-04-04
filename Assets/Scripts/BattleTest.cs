@@ -120,7 +120,7 @@ public class BattleTest : MonoBehaviour
                 startTimer = 5;
                 prevCount = 3;
                 InputMeasures = new Pattern[] { new Pattern(), new Pattern(), new Pattern(), new Pattern(), new Pattern() };
-                
+                createSelections();
             }
             
         }
@@ -191,6 +191,7 @@ public class BattleTest : MonoBehaviour
         defendMeasures = new List<int>();
         EnemyAndSpells = new List<TMP_Dropdown.OptionData>();
         Spells = new List<TMP_Dropdown.OptionData>();
+        string defend = "Defend: " + enemy.damageValue; 
         EnemyAndSpells.Add(new TMP_Dropdown.OptionData("Defend"));
         foreach(Spell s in player.Spellbook) {
             Debug.Log(s.Name);

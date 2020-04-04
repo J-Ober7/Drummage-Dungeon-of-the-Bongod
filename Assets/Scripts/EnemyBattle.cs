@@ -12,6 +12,7 @@ public class EnemyBattle : MonoBehaviour
     private GameObject referenceObject;
     public LevelController lc;
     public Animator anim;
+    public bool boss = false;
 
     public EnemyBattle(int H, int S, Pattern p, int d, GameObject g) {
         Health = H;
@@ -48,6 +49,7 @@ public class EnemyBattle : MonoBehaviour
     {
         anim.SetTrigger("Damage");
         currHealth -= d;
+        CheckDeath();
     }
     public void AttackPlayer(PlayerBattle p)
     {
@@ -75,6 +77,10 @@ public class EnemyBattle : MonoBehaviour
             while (t < 1.6)
             {
                 t += Time.deltaTime;
+            }
+            if (boss)
+            {
+                LevelController.winGame();
             }
             Destroy(gameObject);
         }
