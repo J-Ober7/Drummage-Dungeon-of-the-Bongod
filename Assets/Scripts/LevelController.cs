@@ -12,6 +12,7 @@ public class LevelController : MonoBehaviour
     public BattleTest battleController;
     public string nextL;
     static string NextLevel;
+    public AudioSource aud;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class LevelController : MonoBehaviour
 
     public void enterBattle(EnemyBattle enemy) {
         //battleController.player = player;
+        aud.Pause();
         battleController.enemy = enemy;
         BattleBlock.SetActive(true);
         //Debug.Log("tests");
@@ -34,6 +36,7 @@ public class LevelController : MonoBehaviour
     }
 
     public void endBattle() {
+        aud.Play();
         BattleBlock.SetActive(false);
         inCombat = false;
     }
