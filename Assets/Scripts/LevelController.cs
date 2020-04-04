@@ -10,10 +10,12 @@ public class LevelController : MonoBehaviour
     public static bool inCombat = false;
     public GameObject BattleBlock;
     public BattleTest battleController;
+    public string nextL;
+    static string NextLevel;
     // Start is called before the first frame update
     void Start()
     {
-        
+        NextLevel = nextL;
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class LevelController : MonoBehaviour
     }
 
     public static void winGame() {
-        SceneManager.LoadScene("TutorialBeat");
+        SceneManager.LoadScene(NextLevel);
 
     }
     public static void loseGame() {

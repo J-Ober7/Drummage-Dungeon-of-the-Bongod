@@ -46,3 +46,4 @@ MonoBehaviour:
   player: {fileID: 0}
   BattleBlock: {fileID: 0}
   battleController: {fileID: 0}
+  nextL: 
