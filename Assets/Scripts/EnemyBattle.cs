@@ -32,7 +32,7 @@ public class EnemyBattle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        lc = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
     }
 
     private void randomAttack() {

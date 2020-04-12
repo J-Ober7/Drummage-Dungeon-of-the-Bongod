@@ -420,11 +420,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 409056162183399840, guid: 231762b6712b319499466833d4511edf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 409056162183399870, guid: 231762b6712b319499466833d4511edf,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1198518776}
+    - target: {fileID: 409056163036956716, guid: 231762b6712b319499466833d4511edf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409056163476361230, guid: 231762b6712b319499466833d4511edf,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409056163476361230, guid: 231762b6712b319499466833d4511edf,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409056163476361230, guid: 231762b6712b319499466833d4511edf,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 409056163632340123, guid: 231762b6712b319499466833d4511edf,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 409056163632340123, guid: 231762b6712b319499466833d4511edf,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4954618925618615682, guid: 231762b6712b319499466833d4511edf,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1369,6 +1404,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8799802344812358418, guid: cfed1a5e64b6bd94fae4493d7beaf65f,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2576431378189692851, guid: cfed1a5e64b6bd94fae4493d7beaf65f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1624,6 +1664,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeleEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7984847486401395829, guid: e408310b614588f4a8dbaddc1fbcab4e,
+        type: 3}
+      propertyPath: lc
+      value: 
+      objectReference: {fileID: 1355895554}
     - target: {fileID: 7984847486401395831, guid: e408310b614588f4a8dbaddc1fbcab4e,
         type: 3}
       propertyPath: m_LocalPosition.x
