@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7984847486401395831}
   - component: {fileID: 7984847486401395830}
-  - component: {fileID: 7984847486401395829}
+  - component: {fileID: 1813806574484554905}
   m_Layer: 0
   m_Name: SkeleEnemy
   m_TagString: Enemy
@@ -46,7 +46,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 2, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7984847486401395829
+--- !u!114 &1813806574484554905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,9 +61,10 @@ MonoBehaviour:
   Health: 10
   currHealth: 0
   Speed: 1
-  damageValue: 4
+  damageValue: 1
   lc: {fileID: 0}
   anim: {fileID: 8043001201013909004}
+  boss: 0
 --- !u!1001 &7984847487512092478
 PrefabInstance:
   m_ObjectHideFlags: 0

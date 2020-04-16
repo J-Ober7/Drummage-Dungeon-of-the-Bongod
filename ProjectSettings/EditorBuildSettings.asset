@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 224c51a3af03be94289b098b5b9d8f5a
+  - enabled: 1
+    path: Assets/Scenes/Loss.jpeg.unity
+    guid: 59fc4fb6b0914544bb449b631800fae8
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 81cdbf5d2bd0bd04e9052063991d2398

@@ -21,6 +21,8 @@ public class EnemyBattle : MonoBehaviour
         damageValue = d;
         referenceObject = g;
     }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,11 @@ public class EnemyBattle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lc = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
+        if(!lc)
+        {
+            lc = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
+        } 
+
     }
 
     private void randomAttack() {
@@ -91,9 +97,9 @@ public class EnemyBattle : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //EnemyBattle hold = other.gameObject.GetComponent<EnemyBattle>();//new EnemyBattle()
-            EnemyBattle enemy = this;//new EnemyBattle()
+            //EnemyBattle enemy = this;//new EnemyBattle()
 
-            lc.enterBattle(enemy);
+            lc.enterBattle(this);
         }
     }
 }

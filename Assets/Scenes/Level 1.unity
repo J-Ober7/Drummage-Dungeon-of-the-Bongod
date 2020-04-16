@@ -2133,7 +2133,7 @@ MonoBehaviour:
   currHealth: 0
   Speed: 1
   damageValue: 4
-  lc: {fileID: 218832887}
+  lc: {fileID: 0}
   anim: {fileID: 1405728217}
   boss: 0
 --- !u!65 &557414187
@@ -10910,6 +10910,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3093257915481502283, guid: ce4eaea4767ea6e4c8141b776b168e92,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 645692198}
+    - target: {fileID: 6420662600604738316, guid: ce4eaea4767ea6e4c8141b776b168e92,
+        type: 3}
+      propertyPath: pb
+      value: 
+      objectReference: {fileID: 81973877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce4eaea4767ea6e4c8141b776b168e92, type: 3}
 --- !u!1001 &1521655498531819173
@@ -11101,7 +11111,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lc
       value: 
-      objectReference: {fileID: 218832887}
+      objectReference: {fileID: 0}
     - target: {fileID: 7984847486401395831, guid: e408310b614588f4a8dbaddc1fbcab4e,
         type: 3}
       propertyPath: m_LocalPosition.x

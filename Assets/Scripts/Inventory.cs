@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
     private bool active = false;
     public GameObject Inv;
-    public PickUpType[] pickUps;
+    public static PickUpType[] pickUps;
     public GameObject InvPanel;
 
     //Sprites
@@ -22,10 +22,24 @@ public class Inventory : MonoBehaviour
     {
         InvPanel = GameObject.FindGameObjectWithTag("GridLayout");
         Inv.SetActive(false);
-        pickUps = new PickUpType[16];
+
+        if(pickUps == null)
+        {
+            pickUps = new PickUpType[16];
+        }
+
+        GameObject button;
         for(int i = 0; i < pickUps.Length; ++i)
         {
-            pickUps[i] = new None();
+            if(pickUps[i] == null)
+            {
+                print(i + " null");
+                pickUps[i] = new None();
+            }
+
+            button = InvPanel.transform.GetChild(i).gameObject;
+            button.GetComponent<Image>().sprite = SetSprite(pickUps[i]);
+
         }
     }
 
