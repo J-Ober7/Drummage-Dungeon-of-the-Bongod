@@ -19,12 +19,6 @@ public class LevelController : MonoBehaviour
         NextLevel = nextL;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void enterBattle(EnemyBattle enemy) {
         //battleController.player = player;
         aud.Pause();
