@@ -96,6 +96,9 @@ public class EnemyBattle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Bounds b = GetComponent<Collider>().bounds;
+            print(b.center);
+            print(b.extents);
             //EnemyBattle hold = other.gameObject.GetComponent<EnemyBattle>();//new EnemyBattle()
             //EnemyBattle enemy = this;//new EnemyBattle()
 

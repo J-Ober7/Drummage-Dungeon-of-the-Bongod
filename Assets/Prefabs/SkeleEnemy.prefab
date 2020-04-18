@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7984847486401395830}
   - component: {fileID: 1813806574484554905}
   - component: {fileID: 4399124644995096502}
+  - component: {fileID: 3665594555097138140}
   m_Layer: 0
   m_Name: SkeleEnemy
   m_TagString: Enemy
@@ -45,8 +46,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8, y: 2, z: 8}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 6, y: 2, z: 3}
+  m_Center: {x: 0, y: 0, z: 1.5}
 --- !u!114 &1813806574484554905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +89,28 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3665594555097138140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984847486401395828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b130da02c6ad24b81c3d1f728c259a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  destinations:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 3}
+  speed: 3
+  index: 0
+  currentDes: {x: 0, y: 0, z: 0}
+  anim: {fileID: 8043001201013909004}
+  player: {fileID: 0}
+  ChaseDistance: 9
 --- !u!1001 &7984847487512092478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113,19 +136,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4847383057965624, guid: cbba07a6ac8fd9648a0ee26df90297e9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4847383057965624, guid: cbba07a6ac8fd9648a0ee26df90297e9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4847383057965624, guid: cbba07a6ac8fd9648a0ee26df90297e9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4847383057965624, guid: cbba07a6ac8fd9648a0ee26df90297e9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4847383057965624, guid: cbba07a6ac8fd9648a0ee26df90297e9, type: 3}
       propertyPath: m_RootOrder
@@ -137,7 +160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4847383057965624, guid: cbba07a6ac8fd9648a0ee26df90297e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4847383057965624, guid: cbba07a6ac8fd9648a0ee26df90297e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
