@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   Speed: 4
+  healthText: {fileID: 0}
 --- !u!1 &558010473816047058
 GameObject:
   m_ObjectHideFlags: 0

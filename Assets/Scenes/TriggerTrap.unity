@@ -4580,7 +4580,7 @@ PrefabInstance:
     - target: {fileID: 4954618927235362982, guid: 231762b6712b319499466833d4511edf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4954618927235362982, guid: 231762b6712b319499466833d4511edf,
         type: 3}
@@ -7364,6 +7364,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1329778672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 409056163897298470, guid: 231762b6712b319499466833d4511edf,
+    type: 3}
+  m_PrefabInstance: {fileID: 913959434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1331520831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400048, guid: d265bb418a3d9574aaa5e7500d619208,
@@ -10890,6 +10902,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 558010473600988134, guid: 144c2b829f319fd41be6d7451a783c4b,
+        type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1329778672}
     - target: {fileID: 558010473600988135, guid: 144c2b829f319fd41be6d7451a783c4b,
         type: 3}
       propertyPath: Inv

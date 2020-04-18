@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerBattle : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerBattle : MonoBehaviour
     private int currentHealth;
     public int Speed = 4;
     public Spell[] Spellbook;
+    public TextMeshProUGUI healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class PlayerBattle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       healthText.text = "Health: " + currentHealth;
        if(currentHealth <= 0) {
             LevelController.loseGame();
         }
