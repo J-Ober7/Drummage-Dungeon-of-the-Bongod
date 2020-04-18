@@ -10,6 +10,10 @@ public class PlayerBattle : MonoBehaviour
     public int Speed = 4;
     public Spell[] Spellbook;
     public TextMeshProUGUI healthText;
+    public GameObject fireboltAnimation;
+    public GameObject healAnimation;
+    public GameObject weakenAnimation;
+    public GameObject blockAnimation;
 
     // Start is called before the first frame update
     void Start()
@@ -17,40 +21,45 @@ public class PlayerBattle : MonoBehaviour
         currentHealth = maxHealth;
         Spell Firebolt = new Spell("Firebolt",
             new Pattern(new Beat(Beat.Note.A), new Beat(Beat.Note.D), new Beat(Beat.Note.A), new Beat(Beat.Note.D)),
-            Spell.Type.Attack, 3);
+            Spell.Type.Attack, 3, fireboltAnimation);
         Spell MinorHeal = new Spell("Minor Heal",
             new Pattern(new Beat(Beat.Note.C, Beat.Note.D), new Beat(Beat.Note.B, Beat.Note.C), new Beat(Beat.Note.B), new Beat(Beat.Note.D)),
-            Spell.Type.Attack, 1);
+            Spell.Type.Attack, 1, healAnimation);
         Spell Weaken = new Spell("Weaken",
             new Pattern(new Beat(Beat.Note.D, Beat.Note.A), new Beat(Beat.Note.C, Beat.Note.B), new Beat(Beat.Note.D, Beat.Note.A), new Beat(Beat.Note.B, Beat.Note.C)),
-            Spell.Type.Weak, 1);
+            Spell.Type.Weak, 1, weakenAnimation);
 
-        Spellbook = new Spell[] {Firebolt, MinorHeal, Weaken};
+        Spellbook = new Spell[] { Firebolt, MinorHeal, Weaken };
     }
 
     // Update is called once per frame
     void Update()
     {
-       healthText.text = "Health: " + currentHealth;
-       if(currentHealth <= 0) {
+        healthText.text = "Health: " + currentHealth;
+        if (currentHealth <= 0)
+        {
             LevelController.loseGame();
         }
     }
 
-    public string getHealth() {
+    public string getHealth()
+    {
         return currentHealth.ToString();
     }
 
-    public void takeDamage(int damage) {
+    public void takeDamage(int damage)
+    {
         currentHealth -= damage;
     }
 
     public void heal(int heal)
     {
-        if (currentHealth + heal > maxHealth) {
+        if (currentHealth + heal > maxHealth)
+        {
             currentHealth = maxHealth;
         }
-        else {
+        else
+        {
             currentHealth += heal;
         }
     }
