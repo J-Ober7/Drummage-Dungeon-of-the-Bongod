@@ -23,10 +23,10 @@ public class PlayerBattle : MonoBehaviour
             new Pattern(new Beat(Beat.Note.A), new Beat(Beat.Note.D), new Beat(Beat.Note.A), new Beat(Beat.Note.D)),
             Spell.Type.Attack, 3, fireboltAnimation);
         Spell MinorHeal = new Spell("Minor Heal",
-            new Pattern(new Beat(Beat.Note.C, Beat.Note.D), new Beat(Beat.Note.B, Beat.Note.C), new Beat(Beat.Note.B), new Beat(Beat.Note.D)),
+            new Pattern(new Beat(Beat.Note.C, Beat.Note.D), new Beat(Beat.Note.B), new Beat(Beat.Note.A), new Beat(Beat.Note.D)),
             Spell.Type.Attack, 1, healAnimation);
         Spell Weaken = new Spell("Weaken",
-            new Pattern(new Beat(Beat.Note.D, Beat.Note.A), new Beat(Beat.Note.C, Beat.Note.B), new Beat(Beat.Note.D, Beat.Note.A), new Beat(Beat.Note.B, Beat.Note.C)),
+            new Pattern(new Beat(Beat.Note.D, Beat.Note.A), new Beat(Beat.Note.C), new Beat(Beat.Note.B), new Beat(Beat.Note.D, Beat.Note.A)),
             Spell.Type.Weak, 1, weakenAnimation);
 
         Spellbook = new Spell[] { Firebolt, MinorHeal, Weaken };
