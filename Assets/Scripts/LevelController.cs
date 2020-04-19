@@ -22,6 +22,7 @@ public class LevelController : MonoBehaviour
     public void enterBattle(EnemyBattle enemy) {
         //battleController.player = player;
         aud.Pause();
+        player.gameObject.transform.LookAt(enemy.gameObject.transform.position,Vector3.up);
         battleController.enemy = enemy;
         BattleBlock.SetActive(true);
         //Debug.Log("tests");
@@ -33,6 +34,7 @@ public class LevelController : MonoBehaviour
         aud.Play();
         BattleBlock.SetActive(false);
         inCombat = false;
+        player.transform.rotation = Quaternion.identity;
     }
 
     public static void winGame() {
