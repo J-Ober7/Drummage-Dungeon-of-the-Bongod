@@ -13,10 +13,23 @@ public class LevelController : MonoBehaviour
     public string nextL;
     static string NextLevel;
     public AudioSource aud;
+    static bool dead = false;
+    public GameObject canvas;
+    public GameObject deadscreen;
     // Start is called before the first frame update
     void Start()
     {
         NextLevel = nextL;
+    }
+    private void Update()
+    {
+        if (dead)
+        {
+            canvas.SetActive(false);
+            deadscreen.SetActive(true);
+            dead = false;
+            Invoke("LoadLost", 4f);
+        }
     }
 
     public void enterBattle(EnemyBattle enemy) {
@@ -42,7 +55,11 @@ public class LevelController : MonoBehaviour
 
     }
     public static void loseGame() {
-        SceneManager.LoadScene("Lose");
+        dead = true;
+    }
 
+    public void LoadLost()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

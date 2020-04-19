@@ -47,8 +47,10 @@ MonoBehaviour:
   player: {fileID: 0}
   BattleBlock: {fileID: 0}
   battleController: {fileID: 0}
-  nextL: Level 1
+  nextL: TutorialBeat
   aud: {fileID: -8799802344812358418}
+  canvas: {fileID: 0}
+  deadscreen: {fileID: 0}
 --- !u!82 &-8799802344812358418
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61,7 +63,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cdf4e657394f78542af9f9976322cbf4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
