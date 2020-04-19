@@ -45,7 +45,17 @@ public class EnemyBattle : MonoBehaviour
         Beat.Note[] notes = new Beat.Note[] { Beat.Note.A, Beat.Note.B, Beat.Note.C, Beat.Note.D, Beat.Note.NONE };
         Beat[] beats = new Beat[4];
         for(int ii = 0; ii < 4; ++ii) {
-            beats[ii] = new Beat(notes[Random.Range(0, 5)], notes[Random.Range(0, 5)]);
+            int note1 = Random.Range(0, 5);
+            int note2 = Random.Range(0, 5);
+            int oneortwo = Random.Range(0, 2);
+            if (oneortwo == 1)
+            {
+                beats[ii] = new Beat(notes[note1], notes[note2]);
+            }
+            else
+            {
+                beats[ii] = new Beat(notes[note1]);
+            }
         }
 
         attack = new Pattern(beats[0], beats[1], beats[2], beats[3]);
