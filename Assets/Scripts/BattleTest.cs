@@ -170,6 +170,9 @@ public class BattleTest : MonoBehaviour
                         {
                             t += Time.deltaTime;
                         }
+                    }else
+                    {
+                        Instantiate(player.blockAnimation, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     }
                 }
             }
