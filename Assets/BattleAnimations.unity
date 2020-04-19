@@ -10429,24 +10429,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 558010473600988134, guid: 144c2b829f319fd41be6d7451a783c4b,
         type: 3}
-      propertyPath: fireboltAnimation
-      value: 
-      objectReference: {fileID: 5157695725967437265, guid: 89aedc582da704caf9136c1e174b5d28,
-        type: 3}
-    - target: {fileID: 558010473600988134, guid: 144c2b829f319fd41be6d7451a783c4b,
-        type: 3}
-      propertyPath: healAnimation
-      value: 
-      objectReference: {fileID: 5157695725967437265, guid: 499040002af8241e381e73332dc0bce2,
-        type: 3}
-    - target: {fileID: 558010473600988134, guid: 144c2b829f319fd41be6d7451a783c4b,
-        type: 3}
-      propertyPath: weakenAnimation
-      value: 
-      objectReference: {fileID: 5157695725967437265, guid: e165517dd13f74ac8a508df58a3211d6,
-        type: 3}
-    - target: {fileID: 558010473600988134, guid: 144c2b829f319fd41be6d7451a783c4b,
-        type: 3}
       propertyPath: healthText
       value: 
       objectReference: {fileID: 124074084}
@@ -10457,19 +10439,9 @@ PrefabInstance:
       objectReference: {fileID: 1357450162}
     - target: {fileID: 558010473600988135, guid: 144c2b829f319fd41be6d7451a783c4b,
         type: 3}
-      propertyPath: keyClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f44fb5c757ece704199ac886b35e8d76, type: 3}
-    - target: {fileID: 558010473600988135, guid: 144c2b829f319fd41be6d7451a783c4b,
-        type: 3}
       propertyPath: InvPanel
       value: 
       objectReference: {fileID: 913959435}
-    - target: {fileID: 558010473600988157, guid: 144c2b829f319fd41be6d7451a783c4b,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 558010473600988159, guid: 144c2b829f319fd41be6d7451a783c4b,
         type: 3}
       propertyPath: m_Name
