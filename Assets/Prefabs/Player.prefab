@@ -185,7 +185,8 @@ MonoBehaviour:
     type: 3}
   weakenAnimation: {fileID: 5157695725967437265, guid: e165517dd13f74ac8a508df58a3211d6,
     type: 3}
-  blockAnimation: {fileID: 0}
+  blockAnimation: {fileID: 5157695725967437265, guid: dbb66366c77b3c64dba600d4a11ce6e5,
+    type: 3}
 --- !u!1 &558010473816047058
 GameObject:
   m_ObjectHideFlags: 0
