@@ -1472,6 +1472,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 5359530813013266673, guid: c6f153ad45d02f141afc65b419000126,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359530813013559197, guid: c6f153ad45d02f141afc65b419000126,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1886,6 +1891,11 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 1796131750}
+    - target: {fileID: 1301931755056146692, guid: e64116f8202cc7d4bae05290460221b2,
+        type: 3}
+      propertyPath: openable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1301931756760238113, guid: e64116f8202cc7d4bae05290460221b2,
         type: 3}
       propertyPath: m_LocalPosition.x
