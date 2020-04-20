@@ -47,6 +47,7 @@ public class LevelController : MonoBehaviour
         aud.Play();
         BattleBlock.SetActive(false);
         inCombat = false;
+        player.gameObject.GetComponent<PlayerMovement>().resetTarget();
         player.transform.rotation = Quaternion.identity;
     }
 

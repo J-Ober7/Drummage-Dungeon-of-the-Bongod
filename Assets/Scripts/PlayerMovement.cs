@@ -82,7 +82,10 @@ public class PlayerMovement : MonoBehaviour
             }*/
         }
     }
-
+    public void resetTarget() 
+    {
+        targetAngle = 0;
+    }
     private void UpdateRays()
     {
         Vector3 center = coll.bounds.center;
